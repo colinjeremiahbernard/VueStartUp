@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interesting Vues</title>
+    <script src="./vue.js"></script>
+    <style>
+        .magenta {
+            background-color: magenta;
+            width: 30%;
+            padding-left: 30px;
+            color: gold;
+        }
+        
+        .verde {
+            background-color: green;
+            width: 30%;
+            padding-left: 30px;
+            color: gold;
+        }
+        
+        .azul {
+            background-color: blue;
+            width: 20%;
+            padding-left: 30px;
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!--
+        <p>Value 01: {{ n1 }}</p>
+        <p>Value 02: {{ n2 }}</p>
+
+        <p>sum: {{ sum() }}</p>
+        <p>subtraction: {{ subtract() }}</p>
+        <p>multiplication: {{ multiply() }}</p>
+        <p>times: {{ multi() }}</p>
+        <p>division: {{ divide() }}</p> -->
+
+        <p v-bind:class="color">TESTANDO O VUEJS</p>
+        <a v-bind:href="site">Site {{ site }}</a>
+        <p v-bind:class="cor">V-bind comprehension</p>
+        <input type="text" :placeholder="CompletingInstructions" />
+        <input type="checkbox" :checked="check" />
+        <br/><br/> {{ message }} - {{ message.length }}
+        <input :value="message" type="text" :class="1==2 ? 'verde':estilo " /><br/><br/>
+        <input :value="message" type="text" :class="verifica() ? 'magenta':estilo " />
+    </div>
+    <script>
+        const watch = new Vue({
+            el: "#app ",
+            data: {
+                //n1: 10, n2: 5
+                color: "magenta",
+                site: "https://vuejs.org ",
+                cor: "verde ",
+                CompletingInstructions: "Full name ",
+                estilo: "verde",
+                checked: true,
+
+                message: "Expression 07 ",
+
+                estilo: "azul",
+                teste: "false",
+
+            },
+            methods: {
+                /*
+                sum: function sum() {
+                    //return 4 + 2;
+                    return this.n1 + this.n2;
+                },
+                subtract: function() {
+                    //return 4 - 2;
+                    return this.n1 - this.n2;
+                },
+                multiply: () => {
+                    //return 4 * 2;
+                    return this.n1 * this.n2;
+                },
+                multi: () => this.n1 * this.n2,
+                divide() {
+                    //return 4 / 2;
+                    return this.n1 / this.n2;
+
+                } */
+
+                verifica() {
+                    return true;
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>
